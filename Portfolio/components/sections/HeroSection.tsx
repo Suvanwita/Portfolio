@@ -4,14 +4,8 @@ import type { MouseEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, FileText, Mail, Send, Sparkles } from "lucide-react";
 import { useState } from "react";
-import { FaDocker, FaGithub, FaLinkedin, FaPython, FaReact } from "react-icons/fa";
-import {
-  SiApachekafka,
-  SiCplusplus,
-  SiNextdotjs,
-  SiRedis,
-  SiTypescript,
-} from "react-icons/si";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { TechOrbit } from "@/components/animations/TechOrbit";
 import { TypewriterText } from "@/components/animations/typewriter-text";
 import { profile } from "@/data/portfolio";
 
@@ -20,17 +14,6 @@ const roles = [
   "AI/ML Explorer",
   "Open Source Contributor",
   "Systems Enthusiast",
-];
-
-const techIcons = [
-  { label: "React", icon: FaReact, className: "text-cyan-200" },
-  { label: "Next.js", icon: SiNextdotjs, className: "text-white" },
-  { label: "TypeScript", icon: SiTypescript, className: "text-blue-300" },
-  { label: "Python", icon: FaPython, className: "text-yellow-200" },
-  { label: "C++", icon: SiCplusplus, className: "text-violet-200" },
-  { label: "Docker", icon: FaDocker, className: "text-sky-200" },
-  { label: "Redis", icon: SiRedis, className: "text-rose-200" },
-  { label: "Kafka", icon: SiApachekafka, className: "text-slate-100" },
 ];
 
 const socialLinks = [
@@ -139,7 +122,7 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="relative mx-auto aspect-square w-full max-w-[26rem]"
+          className="relative mx-auto aspect-square w-full max-w-[28rem]"
           style={{
             transform: shouldReduceMotion
               ? undefined
@@ -149,52 +132,24 @@ export function HeroSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.div
-            className="absolute inset-0"
-            animate={shouldReduceMotion ? undefined : { rotate: 360 }}
-            transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-          >
-            {techIcons.map((item, index) => {
-              const angle = (index / techIcons.length) * Math.PI * 2;
-              const left = 50 + Math.cos(angle) * 43;
-              const top = 50 + Math.sin(angle) * 43;
-
-              return (
-                <div
-                  key={item.label}
-                  className="absolute flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl border border-white/10 bg-slate-950/80 shadow-[0_0_22px_rgba(34,211,238,0.12)] backdrop-blur"
-                  style={{ left: `${left}%`, top: `${top}%` }}
-                  aria-label={item.label}
-                  title={item.label}
-                >
-                  <item.icon className={`h-6 w-6 ${item.className}`} aria-hidden="true" />
+          <TechOrbit>
+            <motion.div
+              className="glass-card neon-border mx-auto flex h-full max-h-[13rem] w-full max-w-[13rem] flex-col items-center justify-center rounded-[1.25rem] p-3 text-center sm:max-h-[14.5rem] sm:max-w-[14.5rem] sm:p-4"
+              style={{
+                transform: shouldReduceMotion
+                  ? undefined
+                  : `translate3d(${parallax.x * 24}px, ${parallax.y * 24}px, 0)`,
+              }}
+            >
+              <div>
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-[image:var(--gradient-neon)] text-lg font-black text-white shadow-neon sm:h-16 sm:w-16 sm:text-xl">
+                  SD
                 </div>
-              );
-            })}
-          </motion.div>
-
-          <motion.div
-            className="glass-card neon-border absolute inset-[14%] flex flex-col justify-between rounded-[2rem] p-6 text-center"
-            style={{
-              transform: shouldReduceMotion
-                ? undefined
-                : `translate3d(${parallax.x * 24}px, ${parallax.y * 24}px, 0)`,
-            }}
-          >
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.26em] text-cyan-200">Profile</p>
-              <div className="mx-auto mt-5 flex h-24 w-24 items-center justify-center rounded-3xl bg-[image:var(--gradient-neon)] text-3xl font-black text-white shadow-neon">
-                SD
+                <h2 className="mt-3 text-base font-black text-white sm:text-lg">Suvanwita Das</h2>
+                <p className="mt-1.5 text-xs leading-5 text-slate-300 sm:text-sm">{profile.location}</p>
               </div>
-              <h2 className="mt-5 text-2xl font-black text-white">Suvanwita Das</h2>
-              <p className="mt-2 text-sm leading-6 text-slate-300">{profile.location}</p>
-            </div>
-            <div className="mt-6 grid grid-cols-3 gap-2 text-xs font-bold text-slate-200">
-              <span className="rounded-lg bg-white/10 px-2 py-2">React</span>
-              <span className="rounded-lg bg-white/10 px-2 py-2">AI/ML</span>
-              <span className="rounded-lg bg-white/10 px-2 py-2">Systems</span>
-            </div>
-          </motion.div>
+            </motion.div>
+          </TechOrbit>
         </motion.div>
       </div>
 
