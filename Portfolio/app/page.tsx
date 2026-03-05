@@ -4,7 +4,7 @@ import { AchievementsSection } from "@/components/sections/achievements-section"
 import { AboutSection } from "@/components/sections/AboutSection";
 import { CodingProfilesSection } from "@/components/sections/coding-profiles-section";
 import { ContactSection } from "@/components/sections/contact-section";
-import { EducationTimeline } from "@/components/sections/education-timeline";
+import { EducationTimeline } from "@/components/sections/EducationTimeline";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { Footer } from "@/components/sections/footer";
 import { HeroSection } from "@/components/sections/HeroSection";
