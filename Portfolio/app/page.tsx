@@ -10,7 +10,7 @@ import { Footer } from "@/components/sections/footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { OpenSourceSection } from "@/components/sections/open-source-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
-import { SkillsGalaxy } from "@/components/sections/skills-galaxy";
+import { SkillsGalaxy } from "@/components/sections/SkillsGalaxy";
 
 export default function Home() {
   return (
