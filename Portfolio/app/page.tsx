@@ -9,7 +9,7 @@ import { ExperienceSection } from "@/components/sections/experience-section";
 import { Footer } from "@/components/sections/footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { OpenSourceSection } from "@/components/sections/open-source-section";
-import { ProjectsSection } from "@/components/sections/projects-section";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsGalaxy } from "@/components/sections/SkillsGalaxy";
 
 export default function Home() {
