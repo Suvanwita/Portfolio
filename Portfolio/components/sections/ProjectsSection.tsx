@@ -7,6 +7,7 @@ import { FaGithub } from "react-icons/fa";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
 import { portfolio } from "@/data/portfolio";
+import { SkillSyncDemo } from "@/components/sections/projects/SkillSyncDemo";
 
 type ProjectCategory = "AI/ML" | "Full Stack" | "Systems" | "Open Source";
 
@@ -138,6 +139,8 @@ function ProjectModal({
             </div>
           </div>
         </div>
+
+        {project.name === "SkillSync" ? <SkillSyncDemo /> : null}
       </motion.article>
     </motion.div>
   );
