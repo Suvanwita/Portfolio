@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
 import { portfolio } from "@/data/portfolio";
 import { SkillSyncDemo } from "@/components/sections/projects/SkillSyncDemo";
+import { SwiftCacheTerminal } from "@/components/sections/projects/SwiftCacheTerminal";
 
 type ProjectCategory = "AI/ML" | "Full Stack" | "Systems" | "Open Source";
 
@@ -141,6 +142,7 @@ function ProjectModal({
         </div>
 
         {project.name === "SkillSync" ? <SkillSyncDemo /> : null}
+        {project.name === "SwiftCache" ? <SwiftCacheTerminal /> : null}
       </motion.article>
     </motion.div>
   );
