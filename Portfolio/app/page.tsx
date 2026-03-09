@@ -5,7 +5,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { CodingProfilesSection } from "@/components/sections/coding-profiles-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { EducationTimeline } from "@/components/sections/EducationTimeline";
-import { ExperienceSection } from "@/components/sections/experience-section";
+import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { Footer } from "@/components/sections/footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { OpenSourceSection } from "@/components/sections/open-source-section";
