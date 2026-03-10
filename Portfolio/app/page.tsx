@@ -8,8 +8,8 @@ import { EducationTimeline } from "@/components/sections/EducationTimeline";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { Footer } from "@/components/sections/footer";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { OpenSourceSection } from "@/components/sections/open-source-section";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { ResponsibilitiesSection } from "@/components/sections/ResponsibilitiesSection";
 import { SkillsGalaxy } from "@/components/sections/SkillsGalaxy";
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
         <SkillsGalaxy />
         <ProjectsSection />
         <ExperienceSection />
-        <OpenSourceSection />
+        <ResponsibilitiesSection />
         <AchievementsSection />
         <CodingProfilesSection />
         <ContactSection />
