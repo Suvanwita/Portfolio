@@ -1,6 +1,6 @@
 import { LoaderIntro } from "@/components/animations/LoaderIntro";
 import { Navbar } from "@/components/Navbar";
-import { AchievementsSection } from "@/components/sections/achievements-section";
+import { AchievementsSection } from "@/components/sections/AchievementsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { CodingProfilesSection } from "@/components/sections/coding-profiles-section";
 import { ContactSection } from "@/components/sections/contact-section";
