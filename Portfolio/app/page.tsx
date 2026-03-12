@@ -2,7 +2,7 @@ import { LoaderIntro } from "@/components/animations/LoaderIntro";
 import { Navbar } from "@/components/Navbar";
 import { AchievementsSection } from "@/components/sections/AchievementsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { CodingProfilesSection } from "@/components/sections/coding-profiles-section";
+import { CodingProfilesSection } from "@/components/sections/CodingProfilesSection";
 import { ContactSection } from "@/components/sections/contact-section";
 import { EducationTimeline } from "@/components/sections/EducationTimeline";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
