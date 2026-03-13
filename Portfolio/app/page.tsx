@@ -3,7 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { AchievementsSection } from "@/components/sections/AchievementsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { CodingProfilesSection } from "@/components/sections/CodingProfilesSection";
-import { ContactSection } from "@/components/sections/contact-section";
+import { ContactSection } from "@/components/sections/ContactSection";
 import { EducationTimeline } from "@/components/sections/EducationTimeline";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { Footer } from "@/components/sections/footer";
