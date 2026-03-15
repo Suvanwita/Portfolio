@@ -12,6 +12,7 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ResponsibilitiesSection } from "@/components/sections/ResponsibilitiesSection";
 import { SkillsGalaxy } from "@/components/sections/SkillsGalaxy";
 import { PortfolioGuide } from "@/components/PortfolioGuide";
+import { HireMeWorkflow } from "@/components/sections/HireMeWorkflow";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         <EducationTimeline />
         <SkillsGalaxy />
         <ProjectsSection />
+        <HireMeWorkflow />
         <ExperienceSection />
         <ResponsibilitiesSection />
         <AchievementsSection />
