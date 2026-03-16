@@ -13,6 +13,7 @@ import { ResponsibilitiesSection } from "@/components/sections/ResponsibilitiesS
 import { SkillsGalaxy } from "@/components/sections/SkillsGalaxy";
 import { PortfolioGuide } from "@/components/PortfolioGuide";
 import { HireMeWorkflow } from "@/components/sections/HireMeWorkflow";
+import { TerminalEscapeRoom } from "@/components/sections/TerminalEscapeRoom";
 
 export default function Home() {
   return (
@@ -31,11 +32,12 @@ export default function Home() {
         <EducationTimeline />
         <SkillsGalaxy />
         <ProjectsSection />
-        <HireMeWorkflow />
         <ExperienceSection />
         <ResponsibilitiesSection />
         <AchievementsSection />
         <CodingProfilesSection />
+        <HireMeWorkflow />
+        <TerminalEscapeRoom />
         <ContactSection />
         <Footer />
         <PortfolioGuide />
