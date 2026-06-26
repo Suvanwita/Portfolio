@@ -34,7 +34,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./Portfolio
-        run: npm ci
+        run: npm install
 
       - name: Build static Next.js site
         working-directory: ./Portfolio
