@@ -110,7 +110,7 @@ const commandOutputs: Record<MissionKey, string> = {
     "Skills unlocked.\nCore stack detected:\nFrontend: React, Next.js, Tailwind CSS, TypeScript\nBackend: Node.js, Express.js, FastAPI\nDatabases: MongoDB, PostgreSQL, MySQL\nSystems & Tools: C++, Redis, Docker, GitHub Actions\nAI/ML: Python, Pandas, Scikit-learn, OpenCV",
 
   projects:
-    "Project scan complete.\n\nSkillSync:\nAI-driven career path recommendation platform using React, Node.js, MongoDB, FastAPI, Scikit-learn, Pandas, and Joblib.\n\nSwiftCache:\nRedis-inspired in-memory datastore built in C++17 with TCP server, command registry, TTL expiration, typed storage, and metrics.",
+    "Project scan complete.\n\nSkillSync:\nAI-driven career path recommendation platform using React, Node.js, MongoDB, FastAPI, Scikit-learn, Pandas, and Joblib.\n\nSwiftCache:\nRedis-inspired in-memory datastore built in C++17 with TCP server, command registry, TTL expiration, typed storage, and metrics.\n\nSheCare:\nFull-stack women's health platform with AI/ML predictions, Redis-backed queue scheduling (BullMQ), and Apache Kafka domain event streaming.",
 
   achievements:
     "Achievement badges loaded:\n- Flipkart Girls Wanna Code 7.0 Top Scholars Cohort\n- CodeChef Starters 227 Global Rank 446\n- OpenCode 2024 Rank 12\n- Out Of Context Hackathon Rank 9\n- JEE Mains AIR 5640",

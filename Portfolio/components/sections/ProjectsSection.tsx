@@ -54,6 +54,26 @@ const featuredProjects: FeaturedProject[] = portfolio.projects.map((project) => 
     };
   }
 
+  if (project.title === "SheCare") {
+    return {
+      name: project.title,
+      description: project.description,
+      longDescription:
+        "SheCare is a full-stack women's health platform for cycle tracking, health logging, reminders, appointments, medical reports, educational content, analytics, and admin operations. It combines a Next.js dashboard, an Express/MongoDB backend, Redis/BullMQ background jobs, Kafka event streaming, and FastAPI ML services for PCOS, cycle, and article intelligence.",
+      tech: project.tech,
+      features: project.features ?? [
+        "Complete patient care workspace with cycle tracking & wellness logging",
+        "FastAPI ML services predicting PCOS risk & cycle irregularities",
+        "BullMQ queues powered by Redis for background reminders & notifications",
+        "Kafka event streams connecting domain actions to Audit & Activity Timelines",
+        "Comprehensive role-based admin workflows & analytics dashboards",
+      ],
+      categories: ["Full Stack", "AI/ML"],
+      githubUrl: "https://github.com/Suvanwita/shecare",
+      accent: project.accent,
+    };
+  }
+
   return {
     name: project.title,
     description: project.description,
@@ -188,7 +208,7 @@ export function ProjectsSection() {
         <SectionHeading
           eyebrow="Featured Projects"
           title="Systems, intelligence, and full-stack products with teeth."
-          description="Two focused builds that show Suvanwita's range across AI-backed product work and low-level systems engineering."
+          description="Focused builds that show Suvanwita's range across AI-backed product work, low-level systems, and microservice/event-driven architectures."
         />
       </motion.div>
 

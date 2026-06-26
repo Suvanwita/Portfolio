@@ -152,6 +152,27 @@ export const portfolio: PortfolioData = {
       ],
       accent: "from-pink-400 via-fuchsia-500 to-violet-500",
     },
+    {
+      title: "SheCare",
+      description: "Full-stack women's health platform with AI prediction, background jobs, and event streaming.",
+      tech: [
+        "Next.js",
+        "React",
+        "FastAPI",
+        "Express",
+        "MongoDB",
+        "Redis",
+        "BullMQ",
+        "Apache Kafka",
+      ],
+      features: [
+        "PCOS risk & cycle irregularity predictions via FastAPI ML",
+        "Redis-backed cache & BullMQ queue for reminders/notifications",
+        "Apache Kafka streaming for user Health Activity Timeline",
+        "Comprehensive role-based patient & admin dashboards",
+      ],
+      accent: "from-rose-400 via-pink-500 to-red-500",
+    },
   ],
   skills: [
     {

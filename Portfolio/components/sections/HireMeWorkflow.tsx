@@ -104,6 +104,13 @@ const PROJECT_INTERESTS: ProjectInterest[] = [
     technologies: ["React", "FastAPI", "Pandas", "Scikit-Learn"]
   },
   {
+    id: "shecare",
+    title: "Women's Health Platform",
+    description: "Full-stack health platform combining cycle logs, FastAPI ML, Redis/BullMQ, and Kafka streams.",
+    mapTarget: "SheCare Project",
+    technologies: ["Next.js", "Redis/BullMQ", "FastAPI", "Apache Kafka"]
+  },
+  {
     id: "swiftcache",
     title: "Cache / Systems Tool",
     description: "High-performance Redis-inspired server supporting TTL expiration and custom protocol.",
@@ -139,24 +146,24 @@ const RESULT_MAPPING: Record<string, MatchResult> = {
     nextSectionLabel: "Featured Projects"
   },
   fullstack: {
-    score: 92,
+    score: 95,
     reasons: [
-      "Skilled in React/Next.js, Node.js, Express, MongoDB, PostgreSQL, JWT, and APIs.",
-      "Built SkillSync with separated user management and ML prediction architecture.",
-      "Understands scalable full-stack project structure."
+      "Skilled in React/Next.js, Node.js, Express, MongoDB, PostgreSQL, Redis, and APIs.",
+      "Built SheCare, a robust women's health platform with BullMQ queues and Kafka event streaming.",
+      "Understands complex full-stack microservices and real-time backend architectures."
     ],
     nextSectionId: "projects",
     nextSectionLabel: "Featured Projects"
   },
   ai_ml: {
-    score: 89,
+    score: 90,
     reasons: [
-      "Experience with Python, Pandas, Scikit-learn, FastAPI, and ML workflows.",
-      "Built SkillSync as an AI-driven career recommendation platform.",
+      "Experience with Python, FastAPI, Pandas, Scikit-learn, and ML recommendation pipelines.",
+      "Integrated FastAPI ML prediction models for PCOS risk assessment and cycle prediction inside SheCare.",
       "Worked on computational genomics features during SDE internship."
     ],
     nextSectionId: "projects",
-    nextSectionLabel: "SkillSync Project"
+    nextSectionLabel: "Featured Projects"
   },
   open_source: {
     score: 95,

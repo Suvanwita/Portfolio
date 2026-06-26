@@ -40,12 +40,12 @@ const GUIDE_ACTIONS: Record<string, GuideAction> = {
   },
   projects: {
     label: "Show projects",
-    response: "Her featured projects include SkillSync, an AI-driven career path recommendation platform, and SwiftCache, a Redis-inspired in-memory datastore built in C++.",
+    response: "Her featured projects include SkillSync (AI career recommendation), SwiftCache (C++ in-memory datastore), and SheCare (full-stack women's health platform with AI risk assessment and event streaming).",
     sectionId: "projects"
   },
   best_project: {
     label: "Best project?",
-    response: "For AI + full-stack impact, SkillSync is a strong highlight. For systems depth, SwiftCache stands out because it involves C++17, TCP server design, TTL expiration, command registry, and cache metrics.",
+    response: "SkillSync highlights AI + full-stack integration, SwiftCache demonstrates low-level systems depth in C++, and SheCare showcases enterprise-level architecture using Redis, BullMQ, FastAPI, and Apache Kafka.",
     sectionId: "projects"
   },
   open_source: {
