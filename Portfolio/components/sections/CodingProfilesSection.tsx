@@ -19,7 +19,7 @@ const profiles: ProfileItem[] = [
   {
     platform: "LeetCode",
     label: "DSA practice and interview-style problem solving",
-    href: "https://leetcode.com/",
+    href: "https://leetcode.com/u/Starlight19/",
     icon: SiLeetcode,
     accent: "from-amber-300 via-orange-500 to-pink-500",
     rank: "Knight",
@@ -28,7 +28,7 @@ const profiles: ProfileItem[] = [
   {
     platform: "Codeforces",
     label: "Contest programming and rating-focused challenges",
-    href: "https://codeforces.com/",
+    href: "https://codeforces.com/profile/suvanwita",
     icon: SiCodeforces,
     accent: "from-cyan-300 via-blue-500 to-violet-500",
     rank: "Pupil",
@@ -37,7 +37,7 @@ const profiles: ProfileItem[] = [
   {
     platform: "CodeChef",
     label: "Starters contests, rankings, and competitive growth",
-    href: "https://www.codechef.com/",
+    href: "https://www.codechef.com/users/witty_gaze_07",
     icon: SiCodechef,
     accent: "from-pink-300 via-fuchsia-500 to-violet-500",
     rank: "3 Star",

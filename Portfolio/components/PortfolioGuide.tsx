@@ -200,7 +200,7 @@ export function PortfolioGuide() {
         }
       } else if (action?.specialAction === "resume") {
         // TODO: Place the actual resume.pdf in /public folder to replace the placeholder
-        window.open("/resume.pdf", "_blank");
+        window.open("/Portfolio/resume.pdf", "_blank");
         toast.success("Opening resume placeholder...", {
           icon: "📄",
           style: {
@@ -275,7 +275,7 @@ export function PortfolioGuide() {
           navigator.clipboard?.writeText("dsuvanwita@gmail.com");
           toast.success("Email copied: dsuvanwita@gmail.com");
         } else if (action.specialAction === "resume") {
-          window.open("/resume.pdf", "_blank");
+          window.open("/Portfolio/resume.pdf", "_blank");
           toast.success("Opening resume placeholder...");
         }
       } else {

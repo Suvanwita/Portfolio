@@ -140,7 +140,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/Portfolio/resume.pdf"
             aria-label="Download resume"
             className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-[image:var(--gradient-neon)] px-4 py-2 text-xs font-black text-white shadow-neon transition hover:brightness-110"
           >
@@ -205,7 +205,7 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="/resume.pdf"
+                href="/Portfolio/resume.pdf"
                 aria-label="Download resume"
                 className="inline-flex min-h-10 flex-1 items-center justify-center gap-2 rounded-lg bg-[image:var(--gradient-neon)] px-4 py-2 text-xs font-black text-white"
               >
