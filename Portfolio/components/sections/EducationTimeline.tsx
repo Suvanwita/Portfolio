@@ -22,7 +22,7 @@ const educationItems: EducationItem[] = [
     institute: "IIIT Allahabad",
     degree: "B.Tech Information Technology",
     period: "2024-Present",
-    score: 9.06,
+    score: 8.92,
     decimals: 2,
     prefix: "CGPA ",
     location: "Prayagraj, UP",

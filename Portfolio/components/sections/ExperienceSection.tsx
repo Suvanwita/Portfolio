@@ -11,26 +11,26 @@ type FocusKey = "imputation" | "validation" | "volcano" | "docs";
 const focusCards = [
   {
     key: "imputation",
-    title: "Missing-data imputation",
-    description: "Improved genomics workflows by filling gaps in sparse datasets.",
+    title: "Graph-based Retrieval",
+    description: "Built Neo4j + LangGraph systems supporting workflow-aware genomic analysis assistance.",
     icon: DatabaseZap,
   },
   {
     key: "validation",
-    title: "Dataset validation",
-    description: "Automated checks to catch malformed or incomplete input data.",
+    title: "Genomic Validation",
+    description: "Developed automated validation pipelines improving data quality for large-scale datasets.",
     icon: FileCheck2,
   },
   {
     key: "volcano",
-    title: "Volcano Plot enhancements",
-    description: "Refined scientific visualization for clearer exploratory analysis.",
+    title: "Volcano Plot Visuals",
+    description: "Enhanced scientific graphics modules through custom grouping and analysis features.",
     icon: BarChart3,
   },
   {
     key: "docs",
-    title: "Documentation",
-    description: "Wrote technical notes for validation behavior and platform updates.",
+    title: "Platform Workflows",
+    description: "Improved developer-facing documentation for platform workflows and verification checks.",
     icon: BookOpen,
   },
 ] satisfies Array<{
@@ -69,20 +69,24 @@ export function ExperienceSection() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-pink-100">
-                Jan 2026 - Feb 2026
+                Jan 2026 – Feb 2026
               </p>
               <h3 className="mt-3 text-3xl font-black text-white">Software Development Engineer Intern</h3>
-              <p className="mt-2 text-lg font-bold text-cyan-100">University of Missouri</p>
+              <p className="mt-2 text-lg font-bold text-cyan-100">University of Missouri (Remote)</p>
             </div>
-            <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cyan-100">
-              TRACES
-            </span>
+            <div className="flex gap-2">
+              <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cyan-100">
+                TRACES
+              </span>
+              <span className="rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-pink-100">
+                Remote
+              </span>
+            </div>
           </div>
 
           <p className="mt-6 text-base leading-8 text-slate-300">
-            Worked on the TRACES computational genomics platform, implementing missing-data
-            imputation, automated dataset validation, Volcano Plot enhancements, and technical
-            documentation.
+            Worked on the TRACES computational genomics platform, designing a graph-based retrieval
+            system, developing automated dataset validation pipelines, and enhancing scientific volcano plot visualizations.
           </p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">

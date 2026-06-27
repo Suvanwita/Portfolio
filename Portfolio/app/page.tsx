@@ -6,14 +6,14 @@ import { CodingProfilesSection } from "@/components/sections/CodingProfilesSecti
 import { ContactSection } from "@/components/sections/ContactSection";
 import { EducationTimeline } from "@/components/sections/EducationTimeline";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
+import { DayInLifeSimulator } from "@/components/sections/DayInLifeSimulator";
 import { Footer } from "@/components/sections/footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ResponsibilitiesSection } from "@/components/sections/ResponsibilitiesSection";
 import { SkillsGalaxy } from "@/components/sections/SkillsGalaxy";
-import { PortfolioGuide } from "@/components/PortfolioGuide";
-import { HireMeWorkflow } from "@/components/sections/HireMeWorkflow";
 import { TerminalEscapeRoom } from "@/components/sections/TerminalEscapeRoom";
+import { PortfolioGuide } from "@/components/PortfolioGuide";
 
 export default function Home() {
   return (
@@ -33,10 +33,10 @@ export default function Home() {
         <SkillsGalaxy />
         <ProjectsSection />
         <ExperienceSection />
+        <DayInLifeSimulator />
         <ResponsibilitiesSection />
         <AchievementsSection />
         <CodingProfilesSection />
-        <HireMeWorkflow />
         <TerminalEscapeRoom />
         <ContactSection />
         <Footer />

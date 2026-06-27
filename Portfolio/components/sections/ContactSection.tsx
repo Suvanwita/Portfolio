@@ -12,8 +12,8 @@ import { cn } from "@/lib/utils";
 const email = "dsuvanwita@gmail.com";
 
 const socialButtons = [
-  { label: "GitHub", href: "https://github.com", icon: FaGithub },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: FaLinkedin },
+  { label: "GitHub", href: "https://github.com/Suvanwita", icon: FaGithub },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/suvanwita-d-1ba7a9325/", icon: FaLinkedin },
   { label: "Email", href: `mailto:${email}`, icon: Mail },
 ];
 
@@ -133,7 +133,7 @@ export function ContactSection() {
         <SectionHeading
           eyebrow="Contact"
           title="Let's build something together."
-          description="Send a frontend-only message draft, copy the email, or jump to a social profile."
+          description="Send a message, copy the email, or jump to a social profile."
         />
       </motion.div>
 

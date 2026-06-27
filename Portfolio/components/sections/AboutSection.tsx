@@ -18,13 +18,13 @@ const identityFields = [
   { label: "Name", value: "Suvanwita Das" },
   { label: "Institute", value: "IIIT Allahabad" },
   { label: "Branch", value: "B.Tech Information Technology" },
-  { label: "CGPA", value: "9.06" },
+  { label: "CGPA", value: "8.92" },
   { label: "Interests", value: "Full-stack, AI/ML, Systems, Open Source" },
   { label: "Location", value: "Prayagraj, India" },
 ];
 
 const counters = [
-  { value: 9.06, decimals: 2, label: "CGPA" },
+  { value: 8.92, decimals: 2, label: "CGPA" },
   { value: 95.4, suffix: "%", decimals: 1, label: "Class 12" },
   { value: 98.8, suffix: "%", decimals: 1, label: "Class 10" },
   { value: 5640, prefix: "AIR ", label: "JEE Mains" },

@@ -99,8 +99,12 @@ unlock skills       Reveal technical stack
 inspect projects    Scan featured projects
 run achievements    Load achievement badges
 sudo hire suvanwita Generate recruiter verdict
+matrix              Run matrix status telemetry
+bypass              Bypass developer security firewall
 clear               Clear terminal
-reset               Restart escape room`;
+reset               Restart escape room
+
+Tip: Press [Tab] to auto-complete commands!`;
 
 const commandOutputs: Record<MissionKey, string> = {
   identity:
@@ -134,6 +138,8 @@ const quickCommands = [
   "inspect projects",
   "run achievements",
   "sudo hire suvanwita",
+  "matrix",
+  "bypass"
 ];
 
 export function TerminalEscapeRoom() {
@@ -253,6 +259,37 @@ export function TerminalEscapeRoom() {
       return;
     }
 
+    if (command === "bypass") {
+      addLine("system", "INJECTING SYSTEM OVERRIDE BYPASS CODE...");
+      setIsExecuting(true);
+      window.setTimeout(() => {
+        setUnlockedMissions({
+          identity: true,
+          skills: true,
+          projects: true,
+          achievements: true,
+          hire: true,
+        });
+        setFinalUnlocked(true);
+        addLine("success", "OVERRIDE ACCEPTED. Firewalls disarmed. All profile logs fully unlocked!");
+        setIsExecuting(false);
+      }, 1000);
+      return;
+    }
+
+    if (command === "matrix") {
+      addLine("system", "LOADING KERNEL DECRYPTION STREAM...");
+      setIsExecuting(true);
+      window.setTimeout(() => {
+        addLine("success", "01001001 01001110 01010011 01010100 01000001 01001100 01001100\n" +
+          "SYSTEM: OK | TRACES: ACTIVE | SHECARE: SYNCED | SPEEDORA: RUNNING\n" +
+          "AUTH_KEYS: OK | DEPLOY_SERVER: ACTIVE\n" +
+          "PORTFOLIO MATRIX STATUS: OPTIMIZED");
+        setIsExecuting(false);
+      }, 800);
+      return;
+    }
+
     if (command === "whoami") {
       if (unlockedMissions.identity) {
         addLine("system", "Identity mission is already unlocked.");
@@ -327,6 +364,17 @@ export function TerminalEscapeRoom() {
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      const typed = inputValue.trim().toLowerCase();
+      if (!typed) return;
+      const matched = quickCommands.find((cmd) => cmd.toLowerCase().startsWith(typed));
+      if (matched) {
+        setInputValue(matched);
+      }
+      return;
+    }
+
     if (event.key === "Enter") {
       handleCommand(inputValue);
       return;
@@ -407,9 +455,9 @@ export function TerminalEscapeRoom() {
         />
       </motion.div>
 
-      <div className="relative mt-10 grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+      <div className="relative mt-10 grid gap-6 xl:grid-cols-[1.15fr_0.85fr] items-stretch">
         <motion.div
-          className="glass-card neon-border overflow-hidden rounded-2xl"
+          className="glass-card neon-border overflow-hidden rounded-2xl flex flex-col h-full"
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -417,7 +465,7 @@ export function TerminalEscapeRoom() {
         >
           <button
             type="button"
-            className="block w-full text-left"
+            className="block w-full text-left shrink-0"
             onClick={() => inputRef.current?.focus()}
             aria-label="Focus terminal input"
           >
@@ -437,7 +485,7 @@ export function TerminalEscapeRoom() {
             </div>
           </button>
 
-          <div className="relative min-h-[28rem] bg-black/45 p-4 font-mono text-sm leading-6 sm:p-5">
+          <div className="relative flex-1 bg-black/45 p-4 font-mono text-sm leading-6 sm:p-5 flex flex-col justify-between min-h-[32rem] xl:min-h-0">
             <AnimatePresence>
               {isExecuting && (
                 <motion.div
@@ -450,7 +498,7 @@ export function TerminalEscapeRoom() {
               )}
             </AnimatePresence>
 
-            <div className="max-h-[24rem] space-y-3 overflow-y-auto pr-1">
+            <div className="flex-1 space-y-3 overflow-y-auto pr-1 max-h-[22rem] lg:max-h-[30rem] xl:max-h-[38rem] mb-4">
               <AnimatePresence initial={false}>
                 {terminalLines.map((line) => (
                   <motion.pre
@@ -467,50 +515,52 @@ export function TerminalEscapeRoom() {
               </AnimatePresence>
             </div>
 
-            <div className="mt-5 flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3">
-              <span className="shrink-0 text-pink-200">&gt;</span>
-              <label htmlFor="escape-room-command" className="sr-only">
-                Enter terminal command
-              </label>
-              <input
-                ref={inputRef}
-                id="escape-room-command"
-                value={inputValue}
-                onChange={(event) => setInputValue(event.target.value)}
-                onKeyDown={handleKeyDown}
-                disabled={isExecuting}
-                placeholder={isExecuting ? "executing command..." : "type a command..."}
-                className="min-w-0 flex-1 bg-transparent text-cyan-100 outline-none placeholder:text-slate-500 disabled:cursor-not-allowed"
-              />
-              <motion.span
-                className="h-5 w-2 bg-cyan-200"
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 0.9, repeat: Infinity }}
-                aria-hidden="true"
-              />
-              <button
-                type="button"
-                onClick={() => handleCommand(inputValue)}
-                disabled={isExecuting || !inputValue.trim()}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-cyan-300/10 text-cyan-100 transition hover:border-cyan-300/60 hover:bg-cyan-300/20 disabled:cursor-not-allowed disabled:opacity-40"
-                aria-label="Run terminal command"
-              >
-                <Send className="h-4 w-4" aria-hidden="true" />
-              </button>
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-2">
-              {quickCommands.map((command) => (
-                <button
-                  key={command}
-                  type="button"
-                  onClick={() => handleCommand(command)}
+            <div className="mt-auto shrink-0">
+              <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3">
+                <span className="shrink-0 text-pink-200">&gt;</span>
+                <label htmlFor="escape-room-command" className="sr-only">
+                  Enter terminal command
+                </label>
+                <input
+                  ref={inputRef}
+                  id="escape-room-command"
+                  value={inputValue}
+                  onChange={(event) => setInputValue(event.target.value)}
+                  onKeyDown={handleKeyDown}
                   disabled={isExecuting}
-                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-bold text-slate-300 transition hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-cyan-100 disabled:cursor-not-allowed disabled:opacity-40"
+                  placeholder={isExecuting ? "executing command..." : "type a command..."}
+                  className="min-w-0 flex-1 bg-transparent text-cyan-100 outline-none placeholder:text-slate-500 disabled:cursor-not-allowed"
+                />
+                <motion.span
+                  className="h-5 w-2 bg-cyan-200"
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ duration: 0.9, repeat: Infinity }}
+                  aria-hidden="true"
+                />
+                <button
+                  type="button"
+                  onClick={() => handleCommand(inputValue)}
+                  disabled={isExecuting || !inputValue.trim()}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-cyan-300/10 text-cyan-100 transition hover:border-cyan-300/60 hover:bg-cyan-300/20 disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label="Run terminal command"
                 >
-                  {command}
+                  <Send className="h-4 w-4" aria-hidden="true" />
                 </button>
-              ))}
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {quickCommands.map((command) => (
+                  <button
+                    key={command}
+                    type="button"
+                    onClick={() => handleCommand(command)}
+                    disabled={isExecuting}
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-bold text-slate-300 transition hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-cyan-100 disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    {command}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

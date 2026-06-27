@@ -14,7 +14,7 @@ export function ContactSection() {
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.28em] text-cyan-200">Contact</p>
               <h2 className="text-3xl font-black text-white sm:text-4xl">Let&apos;s build something electric.</h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
-                Available for frontend projects, portfolio collaborations, and UI engineering opportunities.
+                Available for interesting projects and collaborations.
               </p>
             </div>
             <a href={`mailto:${profile.email}`}>

@@ -23,6 +23,24 @@ const filters = ["All", "Coding", "Open Source", "Hackathon", "Academic"] as con
 
 const achievements: Achievement[] = [
   {
+    title: "Code-X-Culture 2026 Rank 14, annual coding contest of IIITA",
+    category: "Coding",
+    rankLabel: "Rank",
+    rankValue: 14,
+    prefix: "#",
+    icon: Trophy,
+    accent: "from-cyan-300 via-blue-500 to-violet-500",
+  },
+  {
+    title: "Three Musketeers 2026 Rank 7 (best girl's team), team coding contest conducted by Aparoksha, IIITA",
+    category: "Coding",
+    rankLabel: "Rank",
+    rankValue: 7,
+    prefix: "#",
+    icon: Medal,
+    accent: "from-pink-400 via-fuchsia-500 to-violet-500",
+  },
+  {
     title: "Flipkart Girls Wanna Code 7.0 Top Scholars Cohort",
     category: "Coding",
     rankLabel: "Top Scholars",

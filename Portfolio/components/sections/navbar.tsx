@@ -22,7 +22,7 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-30 px-4 py-4">
       <nav className="glass-card mx-auto flex max-w-7xl items-center justify-between rounded-xl px-4 py-3">
         <a href="#home" className="text-sm font-black uppercase tracking-[0.24em] text-white">
-          S.Das
+          Suvanwita Das
         </a>
         <button
           type="button"

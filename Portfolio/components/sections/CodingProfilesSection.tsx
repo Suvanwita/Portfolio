@@ -1,18 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Terminal } from "lucide-react";
+import { ExternalLink, Terminal, Shield, Compass } from "lucide-react";
 import { SiCodechef, SiCodeforces, SiLeetcode } from "react-icons/si";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const profiles = [
+type ProfileItem = {
+  platform: string;
+  label: string;
+  href: string;
+  icon: any;
+  accent: string;
+  rank: string;
+  rankClass: string;
+};
+
+const profiles: ProfileItem[] = [
   {
     platform: "LeetCode",
     label: "DSA practice and interview-style problem solving",
     href: "https://leetcode.com/",
     icon: SiLeetcode,
     accent: "from-amber-300 via-orange-500 to-pink-500",
-    bars: [44, 68, 52, 78, 62, 86, 74, 92],
+    rank: "Knight",
+    rankClass: "border-amber-500/30 bg-amber-950/20 text-amber-400",
   },
   {
     platform: "Codeforces",
@@ -20,7 +31,8 @@ const profiles = [
     href: "https://codeforces.com/",
     icon: SiCodeforces,
     accent: "from-cyan-300 via-blue-500 to-violet-500",
-    bars: [62, 48, 72, 58, 84, 66, 90, 76],
+    rank: "Pupil",
+    rankClass: "border-cyan-500/30 bg-cyan-950/40 text-cyan-400",
   },
   {
     platform: "CodeChef",
@@ -28,11 +40,70 @@ const profiles = [
     href: "https://www.codechef.com/",
     icon: SiCodechef,
     accent: "from-pink-300 via-fuchsia-500 to-violet-500",
-    bars: [38, 56, 74, 61, 83, 70, 88, 80],
+    rank: "3 Star",
+    rankClass: "border-pink-500/30 bg-pink-950/40 text-pink-400",
   },
 ];
 
 const terminalLines = ["solving problem...", "compiling...", "accepted OK"];
+
+function ProfileRankBadge({ platform, rank }: { platform: string; rank: string }) {
+  if (platform === "LeetCode") {
+    return (
+      <div className="relative flex flex-col items-center justify-center h-24 w-full sm:w-36 shrink-0 rounded-xl border border-amber-500/25 bg-amber-950/40 overflow-hidden shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(245,158,11,0.02)_1px,transparent_1px)] bg-[size:8px_8px] pointer-events-none" />
+        <div className="sci-fi-corner sci-fi-corner-tl !border-amber-500/50" />
+        <div className="sci-fi-corner sci-fi-corner-br !border-amber-500/50" />
+        <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 animate-pulse">
+          <Shield className="h-4.5 w-4.5" />
+        </div>
+        <span className="mt-1.5 text-lg sm:text-xl font-black tracking-wider text-amber-300 uppercase drop-shadow-[0_0_8px_rgba(245,158,11,0.65)] font-mono">
+          {rank}
+        </span>
+      </div>
+    );
+  }
+  
+  if (platform === "Codeforces") {
+    return (
+      <div className="relative flex flex-col items-center justify-center h-24 w-full sm:w-36 shrink-0 rounded-xl border border-cyan-500/25 bg-cyan-950/40 overflow-hidden shadow-[0_0_20px_rgba(34,211,238,0.15)]">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.02)_1px,transparent_1px)] bg-[size:8px_8px] pointer-events-none" />
+        <div className="sci-fi-corner sci-fi-corner-tr !border-cyan-500/50" />
+        <div className="sci-fi-corner sci-fi-corner-bl !border-cyan-500/50" />
+        <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+          <Compass className="h-4.5 w-4.5 animate-spin-slow" />
+        </div>
+        <span className="mt-1.5 text-lg sm:text-xl font-black tracking-wider text-cyan-300 uppercase drop-shadow-[0_0_8px_rgba(34,211,238,0.65)] font-mono">
+          {rank}
+        </span>
+      </div>
+    );
+  }
+
+  // CodeChef (3 Star)
+  return (
+    <div className="relative flex flex-col items-center justify-center h-24 w-full sm:w-36 shrink-0 rounded-xl border border-pink-500/25 bg-pink-950/40 overflow-hidden shadow-[0_0_20px_rgba(236,72,153,0.15)]">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(236,72,153,0.02)_1px,transparent_1px)] bg-[size:8px_8px] pointer-events-none" />
+      <div className="sci-fi-corner sci-fi-corner-tl !border-pink-500/50" />
+      <div className="sci-fi-corner sci-fi-corner-br !border-pink-500/50" />
+      <div className="relative flex gap-1 items-center justify-center h-8">
+        {[1, 2, 3].map((i) => (
+          <motion.span
+            key={i}
+            animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 1.4, repeat: Infinity, delay: i * 0.25 }}
+            className="text-pink-400 text-sm drop-shadow-[0_0_6px_rgba(236,72,153,0.8)]"
+          >
+            ★
+          </motion.span>
+        ))}
+      </div>
+      <span className="mt-1 text-lg sm:text-xl font-black tracking-wider text-pink-300 uppercase drop-shadow-[0_0_8px_rgba(236,72,153,0.65)] font-mono">
+        {rank}
+      </span>
+    </div>
+  );
+}
 
 export function CodingProfilesSection() {
   return (
@@ -46,7 +117,7 @@ export function CodingProfilesSection() {
         <SectionHeading
           eyebrow="Coding Arena"
           title="Competitive Coding Arena"
-          description="Practice profiles and contest platforms, ready for real account links whenever you want to plug them in."
+          description="Contest platforms, solved targets, and ranks in our neural diagnostic logs."
         />
       </motion.div>
 
@@ -119,7 +190,8 @@ export function CodingProfilesSection() {
             >
               <div className={`absolute inset-y-0 left-0 w-1 bg-gradient-to-b ${profile.accent}`} />
               <div className={`absolute -right-20 -top-20 h-44 w-44 rounded-full bg-gradient-to-br ${profile.accent} opacity-15 blur-3xl transition group-hover:opacity-35`} />
-              <div className="relative grid gap-5 lg:grid-cols-[1fr_12rem] lg:items-center">
+              
+              <div className="relative flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                 <div className="flex gap-4">
                   <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${profile.accent} text-white shadow-neon`}>
                     <profile.icon className="h-7 w-7" aria-hidden="true" />
@@ -138,18 +210,9 @@ export function CodingProfilesSection() {
                     </a>
                   </div>
                 </div>
-                <div className="flex h-24 items-end gap-1.5">
-                  {profile.bars.map((height, barIndex) => (
-                    <motion.span
-                      key={`${profile.platform}-${barIndex}`}
-                      className={`flex-1 rounded-t bg-gradient-to-t ${profile.accent}`}
-                      initial={{ height: 0 }}
-                      whileInView={{ height: `${height}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.08 + barIndex * 0.03 }}
-                    />
-                  ))}
-                </div>
+
+                {/* Cyber Rank Badge instead of Bar-Chart Heatmap */}
+                <ProfileRankBadge platform={profile.platform} rank={profile.rank} />
               </div>
             </motion.article>
           ))}
