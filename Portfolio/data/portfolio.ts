@@ -52,6 +52,7 @@ export type AchievementItem = {
 export type CodingProfile = {
   platform: string;
   url?: string;
+  rank?: string;
 };
 
 export type StrengthItem = {
@@ -76,6 +77,7 @@ export type PortfolioData = {
   codingProfiles: CodingProfile[];
   strengths: StrengthItem[];
   stats: StatItem[];
+  mentoredProjects: any[];
 };
 
 export const portfolio: PortfolioData = {
@@ -369,6 +371,7 @@ export const portfolio: PortfolioData = {
       description: "AI-powered career enhancement platform to optimize resumes, evaluate job-fit, and generate tailored cover letters.",
       tech: ["Next.js", "Tailwind CSS", "Node.js", "Express", "MongoDB", "FastAPI", "Python", "NLP"],
       stats: { issues: "40+", prs: "150+", contributors: "70+" },
+      githubUrl: "https://github.com/opencodeiiita/CareerCraft",
       features: [
         "ATS resume scanning & structural formatting check",
         "NLP keyword checking & matching with target job listings",
@@ -383,6 +386,7 @@ export const portfolio: PortfolioData = {
       description: "AI platform for PCOS severity prediction, wellness tracking, diagnostics analytics, and chatbot support.",
       tech: ["React", "Tailwind CSS", "Express", "MongoDB", "Python", "FastAPI", "Random Forest", "NLP"],
       stats: { issues: "15+", prs: "60+", contributors: "30+" },
+      githubUrl: "https://github.com/opencodeiiita/Fem-care",
       features: [
         "Guided form for PCOS symptom logging & database storage",
         "Random Forest machine learning model predicting severity risk",

@@ -30,8 +30,8 @@ const roles = [
 ];
 
 const socialLinks = [
-  { label: "GitHub", href: "https://github.com", icon: FaGithub, color: "hover:border-cyan-300/60 hover:text-cyan-400 hover:bg-cyan-300/10" },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: FaLinkedin, color: "hover:border-violet-300/60 hover:text-violet-400 hover:bg-violet-300/10" },
+  { label: "GitHub", href: "https://github.com/Suvanwita", icon: FaGithub, color: "hover:border-cyan-300/60 hover:text-cyan-400 hover:bg-cyan-300/10" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/suvanwita-d-1ba7a9325/", icon: FaLinkedin, color: "hover:border-violet-300/60 hover:text-violet-400 hover:bg-violet-300/10" },
   { label: "Email", href: `mailto:${profile.email}`, icon: Mail, color: "hover:border-pink-300/60 hover:text-pink-400 hover:bg-pink-300/10" },
 ];
 

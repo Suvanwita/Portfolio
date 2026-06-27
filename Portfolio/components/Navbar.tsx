@@ -23,8 +23,8 @@ const navItems: NavItem[] = [
 ];
 
 const socialLinks = [
-  { label: "GitHub profile", href: "https://github.com", icon: FaGithub },
-  { label: "LinkedIn profile", href: "https://linkedin.com", icon: FaLinkedin },
+  { label: "GitHub profile", href: "https://github.com/Suvanwita", icon: FaGithub },
+  { label: "LinkedIn profile", href: "https://www.linkedin.com/in/suvanwita-d-1ba7a9325/", icon: FaLinkedin },
 ];
 
 export function Navbar() {

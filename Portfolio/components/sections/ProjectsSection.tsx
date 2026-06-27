@@ -56,7 +56,7 @@ const featuredProjects: FeaturedProject[] = portfolio.projects.map((project) => 
         "MongoDB-backed profile and skill data",
       ],
       categories: ["AI/ML", "Full Stack", "Open Source"],
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/suvanwita/skill_Sync",
       accent: project.accent,
     };
   }
@@ -76,7 +76,7 @@ const featuredProjects: FeaturedProject[] = portfolio.projects.map((project) => 
         "Comprehensive role-based admin workflows & analytics dashboards",
       ],
       categories: ["Full Stack", "AI/ML"],
-      githubUrl: "https://github.com/Suvanwita/shecare",
+      githubUrl: "https://github.com/suvanwita/shecare",
       accent: project.accent,
     };
   }
@@ -115,7 +115,7 @@ const featuredProjects: FeaturedProject[] = portfolio.projects.map((project) => 
         "Optimized statistics lookups via Fenwick Tree metrics aggregation",
       ],
       categories: ["Full Stack", "Systems"],
-      githubUrl: "https://github.com/Suvanwita/EventPulse",
+      githubUrl: "https://github.com/suvanwita/eventpulse",
       accent: project.accent,
     };
   }
@@ -152,7 +152,7 @@ const featuredProjects: FeaturedProject[] = portfolio.projects.map((project) => 
       "Server metrics",
     ],
     categories: ["Systems", "Open Source"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Suvanwita/SwiftCache",
     accent: project.accent,
   };
 });
@@ -530,7 +530,7 @@ export function ProjectsSection() {
                 </div>
 
                 <div className="mt-5 flex flex-wrap gap-1.5">
-                  {project.tech.map((t) => (
+                  {project.tech.map((t: string) => (
                     <span key={t} className="rounded bg-slate-900/60 border border-white/5 px-2.5 py-0.5 text-[10px] font-bold text-slate-400">
                       {t}
                     </span>
@@ -538,11 +538,22 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-cyan-950/35">
+              <div className="mt-6 pt-4 border-t border-cyan-950/35 flex gap-3">
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-10 w-1/3 items-center justify-center gap-2 rounded border border-white/10 bg-white/5 text-[10px] font-black uppercase text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+                  >
+                    <FaGithub className="h-4 w-4" />
+                    GitHub
+                  </a>
+                )}
                 <button
                   type="button"
                   onClick={() => setSelectedMentoredProject(project)}
-                  className="w-full flex justify-center items-center gap-2 rounded bg-pink-950/30 hover:bg-pink-500/10 text-pink-300 py-2.5 text-xs font-black uppercase tracking-wider transition duration-300 border border-pink-500/20"
+                  className="flex-1 flex justify-center items-center gap-2 rounded bg-pink-950/30 hover:bg-pink-500/10 text-pink-300 py-2.5 text-xs font-black uppercase tracking-wider transition duration-300 border border-pink-500/20"
                 >
                   <span>Case Study & Architecture</span>
                   <ArrowRight className="h-3.5 w-3.5" />
